@@ -6,9 +6,9 @@ import           RIO.Process
 
 -- | Command line arguments
 data Options = Options
-  { optionsVerbose :: !Bool
-  , pointsString :: ![String]
-  , integrate :: !Bool
+  { optionsVerbose  :: !Bool
+  , pointsString    :: ![String]
+  , integrateOption :: !Bool
   }
 
 data App = App
@@ -23,3 +23,5 @@ instance HasLogFunc App where
 instance HasProcessContext App where
   processContextL =
     lens appProcessContext (\x y -> x { appProcessContext = y })
+
+data Point = Point Double Double deriving Show
