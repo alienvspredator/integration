@@ -3,10 +3,7 @@ module Integral.Euler
   )
 where
 
-data Point = Point Double Double
-
-instance Show Point where
-  show (Point x y) = "(x: " ++ show x ++ ", y: " ++ show y ++ ")"
+import Import
 
 eulerStep :: (Point -> Double) -> Double -> Point -> Point
 eulerStep f step point@(Point x y) = Point xnew ynew

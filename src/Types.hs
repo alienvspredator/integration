@@ -24,4 +24,7 @@ instance HasProcessContext App where
   processContextL =
     lens appProcessContext (\x y -> x { appProcessContext = y })
 
-data Point = Point Double Double deriving Show
+data Point = Point Double Double
+
+instance Show Point where
+  show (Point x y) = "(x: " ++ show x ++ ", y: " ++ show y ++ ")"
