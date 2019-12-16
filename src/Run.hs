@@ -8,4 +8,7 @@ where
 import           Import
 
 run :: RIO App ()
-run = logInfo "We're inside the application!"
+run = do
+  options <- appOptions <$> ask
+  logInfo "We're inside the application!"
+  logInfo $ fromString $ show $ pointsString options

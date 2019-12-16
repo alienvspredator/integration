@@ -5,12 +5,16 @@ import           RIO
 import           RIO.Process
 
 -- | Command line arguments
-newtype Options = Options { optionsVerbose :: Bool }
+data Options = Options
+  { optionsVerbose :: !Bool
+  , pointsString :: ![String]
+  , integrate :: !Bool
+  }
 
 data App = App
-  { appLogFunc :: !LogFunc
+  { appLogFunc        :: !LogFunc
   , appProcessContext :: !ProcessContext
-  , appOptions :: !Options
+  , appOptions        :: !Options
   -- Add other app-specific configuration information here
   }
 
