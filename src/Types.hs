@@ -8,7 +8,7 @@ import           RIO.Process
 data Options = Options
   { optionsVerbose  :: !Bool
   , integrateOption :: !Bool
-  , graphicOutputOption :: !Bool
+  , graphicOutputPath :: !(Maybe String)
   , xOption :: !Double
   , yOption :: !Double
   , stepOption :: !Double

@@ -26,23 +26,28 @@ main = do
         ( long "integrate"
        <> short 'i'
        <> help "Calculate integral" )
-      <*> switch
-        ( long "graphic"
-        <> short 'g'
-        <> help "Outputs graphic" )
+      <*> optional ( strOption
+                    ( long "graphic"
+                   <> short 'g'
+                   <> help "Output graphic path"
+                   <> metavar "FILEPATH.eps" ))
       <*> option auto
         ( short 'x'
-       <> help "x initial value" )
+       <> help "x initial value"
+       <> metavar "NUMBER" )
       <*> option auto
         ( short 'y'
-       <> help "y initial value" )
+       <> help "y initial value"
+       <> metavar "NUMBER" )
       <*> option auto
         ( long "step"
        <> short 's'
-       <> help "Step value" )
+       <> help "Step value"
+       <> metavar "NUMBER" )
       <*> option auto
         ( long "xf"
-      <> help "xf value" )
+      <> help "xf value"
+      <> metavar "NUMBER" )
       )
     empty
   lo <- logOptionsHandle stderr (optionsVerbose options)

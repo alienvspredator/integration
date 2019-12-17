@@ -23,13 +23,15 @@ run = do
     else return $ differentiate (** 2) point xf step
   logInfo $ fromString $ show result
 
-  when (graphicOutputOption options) $ do
-    path <- liftIO $ getCurrentDirectory >>= \x -> return $ x ++ "/plot.eps"
-    liftIO
-      $ plotDots
-          [ EPS path
-          , Grid $ Just ["ytics", "mytics"]
-          , Grid $ Just ["xtics", "mytics"]
-          ]
-      $ map (\(Point x y) -> (x, y)) result
-    logInfo $ fromString $ "Plot saved to '" ++ path ++ "'"
+  case graphicOutputPath options of
+    Just path -> do
+      canonicalPath <- liftIO $ canonicalizePath path
+      liftIO
+        $ plotDots
+            [ EPS canonicalPath
+            , Grid $ Just ["ytics", "mytics"]
+            , Grid $ Just ["xtics", "mytics"]
+            ]
+        $ map (\(Point x y) -> (x, y)) result
+      logInfo $ fromString $ "Plot saved to '" ++ canonicalPath ++ "'"
+    Nothing -> return ()
