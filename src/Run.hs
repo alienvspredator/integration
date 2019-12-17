@@ -19,7 +19,7 @@ run = do
   let step  = stepOption options
 
   result <- if integrateOption options
-    then return $ integrate' f point xf step
+    then return $ integrate' (*) point xf step
     else return $ differentiate (** 2) point xf step
   logInfo $ fromString $ show result
 
@@ -33,4 +33,3 @@ run = do
           ]
       $ map (\(Point x y) -> (x, y)) result
     logInfo $ fromString $ "Plot saved to '" ++ path ++ "'"
-  where f (Point x y) = 6 * x ** 2 + 5 * x * y
