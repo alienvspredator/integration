@@ -5,7 +5,6 @@ module Main
   )
 where
 
-import           ApplicativeOption (multiString)
 import           Import
 import           Options.Applicative.Simple
 import qualified Paths_lab5
@@ -23,15 +22,27 @@ main = do
         ( long "verbose"
        <> short 'v'
        <> help "Verbose output?" )
-      <*> multiString
-        ( long "points"
-       <> short 'p'
-       <> metavar "x,y..."
-       <> help "List of the points" )
       <*> switch
         ( long "integrate"
        <> short 'i'
        <> help "Calculate integral" )
+      <*> switch
+        ( long "graphic"
+        <> short 'g'
+        <> help "Outputs graphic" )
+      <*> option auto
+        ( short 'x'
+       <> help "x initial value" )
+      <*> option auto
+        ( short 'y'
+       <> help "y initial value" )
+      <*> option auto
+        ( long "step"
+       <> short 's'
+       <> help "Step value" )
+      <*> option auto
+        ( long "xf"
+      <> help "xf value" )
       )
     empty
   lo <- logOptionsHandle stderr (optionsVerbose options)

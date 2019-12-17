@@ -21,6 +21,8 @@ description:         Please see the README on Github at <https://github.com/alie
 dependencies:
 - base >= 4.11 && < 10
 - rio >= 0.1.8.0
+- gnuplot
+- directory
 
 ghc-options:
 - -Wall
@@ -41,6 +43,8 @@ executables:
     dependencies:
     - lab5
     - optparse-simple
+    - regex-tdfa
+    - regex-tdfa-text
 
     ghc-options:
     - -threaded
