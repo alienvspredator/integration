@@ -4,7 +4,7 @@ module Integral.Euler
   )
 where
 
-import           Import
+import           Types
 
 eulerStep :: (Point -> Double) -> Double -> Point -> Point
 eulerStep f step point@(Point x y) = Point xnew ynew
