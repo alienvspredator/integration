@@ -37,9 +37,11 @@ _integrate stepFn f point xf step = takeWhile (\(Point x _) -> x <= xf)
   where iterator = iterate $ stepFn f step
 
 -- | Integrates with Euler's method
-integrate :: (Double -> Double -> Double) -> Point -> Double -> Double -> [Point]
+integrate
+  :: (Double -> Double -> Double) -> Point -> Double -> Double -> [Point]
 integrate = _integrate eulerStep
 
 -- Integrates with modified Euler's method
-integrate' :: (Double -> Double -> Double) -> Point -> Double -> Double -> [Point]
+integrate'
+  :: (Double -> Double -> Double) -> Point -> Double -> Double -> [Point]
 integrate' = _integrate eulerStep'
