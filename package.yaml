@@ -1,6 +1,6 @@
-name:                lab5
+name:                integration
 version:             0.1.0.0
-github:              alienvspredator/lab5
+github:              alienvspredator/integration
 license:             BSD3
 author:              Danylo Shevchenko
 copyright:           2019 Danylo Shevchenko
@@ -16,7 +16,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on Github at <https://github.com/alienvspredator/lab5#readme>
+description:         Please see the README on Github at <https://github.com/alienvspredator/integration#readme>
 
 dependencies:
 - base >= 4.11 && < 10
@@ -37,11 +37,11 @@ library:
   source-dirs: src
 
 executables:
-  lab5-exe:
+  integration-exe:
     main:                Main.hs
     source-dirs:         app
     dependencies:
-    - lab5
+    - integration
     - optparse-simple
     - regex-tdfa
     - regex-tdfa-text
@@ -52,11 +52,11 @@ executables:
     - -with-rtsopts=-N
 
 tests:
-  lab5-test:
+  integration-test:
     main:                Spec.hs
     source-dirs:         test
     dependencies:
-    - lab5
+    - integration
     - hspec
 
     ghc-options:
