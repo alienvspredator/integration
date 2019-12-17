@@ -7,14 +7,14 @@ where
 
 import           Import
 import           Options.Applicative.Simple
-import qualified Paths_lab5
+import qualified Paths_integration
 import           RIO.Process
 import           Run
 
 main :: IO ()
 main = do
   (options, ()) <- simpleOptions
-    $(simpleVersion Paths_lab5.version)
+    $(simpleVersion Paths_integration.version)
     "Calculation of integral or differential"
     "If option 'integrate' is not specified, the utilite calculates defferential. Otherwise integral"
     (Options

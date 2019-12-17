@@ -16,7 +16,7 @@ $ brew install gnuplot
 ## Usage
 
 ```
-Usage: lab5-exe [--version] [--help] [-v|--verbose] [-i|--integrate]
+Usage: integration-exe [--version] [--help] [-v|--verbose] [-i|--integrate]
                 [-g|--graphic FILEPATH.eps] -x NUMBER -y NUMBER
                 (-s|--step NUMBER) --xf NUMBER
 ```
@@ -70,4 +70,4 @@ $ stack build
 # Builds the utility
 ```
 
-5. Builded binary will output into `./.stack-work/dist/*target-arch*/Cabal-*version*/build/integrator-exe`
+5. Builded binary will output into `./.stack-work/dist/*target-arch*/Cabal-*version*/build/integration-exe/integration-exe`

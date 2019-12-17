@@ -1,3 +1,3 @@
-# Changelog for lab5
+# Changelog for integration
 
 ## Unreleased changes
